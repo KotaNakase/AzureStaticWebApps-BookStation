@@ -7,22 +7,20 @@ app.http('dataaccess', {
         context.log(`Http function processed request for url "${request.url}"`);
 
         // 外部APIのURL
-        // const externalUrl = 'https://prod-15.japaneast.logic.azure.com:443/workflows/90e36b66225f45dca07a6b134a3cb063/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=ETuhs4vLTc41XTvg0hwxN_MqHlCy3yhM61bAzZL35Yw';
-        const externalUrl = 'https://prod-08.japaneast.logic.azure.com:443/workflows/0e78b3fb50784f64b6ad6aab8293efa7/triggers/When_a_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_a_HTTP_request_is_received%2Frun&sv=1.0&sig=VoXRXosCyaqc8L0KINGSS9d4hLfHVmwpM-q7FVmtP38';
+        const externalUrl = 'https://prod-15.japaneast.logic.azure.com:443/workflows/90e36b66225f45dca07a6b134a3cb063/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=ETuhs4vLTc41XTvg0hwxN_MqHlCy3yhM61bAzZL35Yw';
 
         try {
             // Logic Apps に渡す JSON body
-            // const body = {
-            //     method: "select"
-            // };
-            // const response = await fetch(externalUrl, {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-Type": "application/json"
-            //     },
-            //     body: JSON.stringify(body)
-            // });
-            const response = await fetch(externalUrl);
+            const body = {
+                method: "select"
+            };
+            const response = await fetch(externalUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(body)
+            });
             const data = await response.json();
 
             return {
