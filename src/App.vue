@@ -25,9 +25,9 @@ export default {
     this.body = await response.json();
     for (let item of this.body) {
       this.items.push({
-        id: item.RowKey,
-        title: item.title,
-        content: item.content,
+        id: item.ID,
+        title: item.Title,
+        content: item.Content,
       });
     }
   }
