@@ -37,7 +37,12 @@ export default {
      * サインイン処理
      */
     async signIn() {
-        this.$router.push({ name: "top" });
+      this.$router.push({ name: "top" }).catch(err => {
+      // NavigationDuplicated エラーのみ無視する
+      if (err.name !== 'NavigationDuplicated') {
+        throw err;
+       }
+    });
     //   this.msg = "";
     //   this.errMsg = "";
 
