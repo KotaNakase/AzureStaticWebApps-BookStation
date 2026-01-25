@@ -32,8 +32,12 @@ export default {
       });
     }
   },
-      async signIn() {
-        this.$router.push({ name: "signIn" });
+    methods: {
+    /**
+     * サインイン処理
+     */
+    async signIn() {
+        this.$router.push({ name: "top" });
     //   this.msg = "";
     //   this.errMsg = "";
 
@@ -52,5 +56,6 @@ export default {
     //     this.isLoading = false;
     //   }
     },
+  },
 };
 </script>
