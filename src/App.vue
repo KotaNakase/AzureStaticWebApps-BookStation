@@ -3,6 +3,7 @@
     <div>
       <b-table striped responsive hover :items="items" :fields="fields" />
     </div>
+    <button class="btn-primary btn-sm" v-on:click="signIn()">test</button>
   </div>
 </template>
 
@@ -30,6 +31,26 @@ export default {
         content: item.Content,
       });
     }
-  }
+  },
+      async signIn() {
+        this.$router.push({ name: "signIn" });
+    //   this.msg = "";
+    //   this.errMsg = "";
+
+    //   this.isLoading = true;
+
+    //   try {
+    //     await UserUtil.signIn(this.userId, this.password);
+    //     this.$router.push({ name: "top" });
+    //   } catch (e) {
+    //     if (e.response.status === 401) {
+    //       this.errMsg = "サインインに失敗しました";
+    //     } else {
+    //       this.errMsg = e.message;
+    //     }
+    //   } finally {
+    //     this.isLoading = false;
+    //   }
+    },
 };
 </script>
