@@ -27,66 +27,66 @@ export default new Router({
       props: true,
       component: SignIn,
     },
-    // {
-    //   path: "/pages/sign-out.html",
-    //   name: "signOut",
-    //   component: SignOut,
-    // },
+    {
+      path: "/pages/sign-out.html",
+      name: "signOut",
+      component: SignOut,
+    },
     {
       path: "/pages/top.html",
       name: "top",
       component: Top,
     },
-    // {
-    //   path: "/pages/book/list.html",
-    //   name: "bookList",
-    //   component: BookList,
-    // },
-    // {
-    //   path: "/pages/book/manager.html",
-    //   name: "bookManager",
-    //   component: BookManager,
-    // },
-    // {
-    //   path: "/pages/user/list.html",
-    //   name: "userList",
-    //   props: true,
-    //   component: UserList,
-    // },
-    // {
-    //   path: "/pages/user/create.html",
-    //   name: "userCreate",
-    //   component: UserCreate,
-    // },
-    // {
-    //   path: "/pages/user/manager.html",
-    //   name: "userManager",
-    //   component: UserManager,
-    // },
-    // {
-    //   path: "/pages/book/rental.html",
-    //   name: "rentalBook",
-    //   component: RentalBook,
-    // },
-    // {
-    //   path: "/pages/book/rental/list.html",
-    //   name: "rentalList",
-    //   component: RentalList,
-    // },
-    // {
-    //   path: "/pages/student.html",
-    //   name: "student",
-    //   component: Student,
-    // },
-    // {
-    //   path: "/pages/information/manager.html",
-    //   name: "informationManager",
-    //   component: InformationManager,
-    // },
-    // {
-    //   path: "*",
-    //   name: "sorry",
-    //   component: Sorry,
-    // },
+    {
+      path: "/pages/book/list.html",
+      name: "bookList",
+      component: BookList,
+    },
+    {
+      path: "/pages/book/manager.html",
+      name: "bookManager",
+      component: BookManager,
+    },
+    {
+      path: "/pages/user/list.html",
+      name: "userList",
+      props: true,
+      component: UserList,
+    },
+    {
+      path: "/pages/user/create.html",
+      name: "userCreate",
+      component: UserCreate,
+    },
+    {
+      path: "/pages/user/manager.html",
+      name: "userManager",
+      component: UserManager,
+    },
+    {
+      path: "/pages/book/rental.html",
+      name: "rentalBook",
+      component: RentalBook,
+    },
+    {
+      path: "/pages/book/rental/list.html",
+      name: "rentalList",
+      component: RentalList,
+    },
+    {
+      path: "/pages/student.html",
+      name: "student",
+      component: Student,
+    },
+    {
+      path: "/pages/information/manager.html",
+      name: "informationManager",
+      component: InformationManager,
+    },
+    {
+      path: "*",
+      name: "sorry",
+      component: Sorry,
+    },
   ],
 });
