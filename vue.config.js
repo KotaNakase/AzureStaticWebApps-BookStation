@@ -12,6 +12,12 @@ module.exports = {
   },
   lintOnSave: true,
   pages: {
+    index: {
+      entry: "src/main.js",
+      template: "public/pages/index.html",
+      filename: "index.html",
+      title: "サインイン",
+    },
     signIn: {
       entry: "src/main.js",
       template: "public/pages/index.html",
