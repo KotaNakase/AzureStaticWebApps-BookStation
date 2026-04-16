@@ -56,7 +56,7 @@
                         <img
                           style="height: 7rem; width: 7rem"
                           v-if="row.imgUrl === undefinded || row.imgUrl === null || row.imgUrl === ''"
-                          src="../../public/image/no-image.png"
+                          src="/image/no-image.png"
                         />
                         <a
                           href="#"

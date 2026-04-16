@@ -14,10 +14,10 @@
           <div class="d-flex align-items-stretch">
             <!-- 図書館イメージ -->
             <div>
-              <img src="/public/image/library.png" class="img-fluid" />
+              <img src="/image/library.png" class="img-fluid" />
             </div>
             <div>
-              <img src="/public/image/title.png" class="img-fluid" />
+              <img src="/image/title.png" class="img-fluid" />
             </div>
           </div>
 

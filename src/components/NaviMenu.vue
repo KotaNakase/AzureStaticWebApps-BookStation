@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
       <router-link class="navbar-brand mr-1" :to="{ name: 'top' }">
-        <img src="/public/image/logo.png" class="img-fluid" width="140px" height="20px" />
+        <img src="/image/logo.png" class="img-fluid" width="140px" height="20px" />
       </router-link>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
