@@ -1,19 +1,19 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-// import BookList from "./views/BookList.vue";
-// import BookManager from "./views/BookManager.vue";
-// import RentalBook from "./views/RentalBook.vue";
-// import RentalList from "./views/RentalList.vue";
+import BookList from "./views/BookList.vue";
+import BookManager from "./views/BookManager.vue";
+import RentalBook from "./views/RentalBook.vue";
+import RentalList from "./views/RentalList.vue";
 import SignIn from "./views/SignIn.vue";
-// import SignOut from "./views/SignOut.vue";
-// import Sorry from "./views/Sorry.vue";
-// import Student from "./views/Student.vue";
+import SignOut from "./views/SignOut.vue";
+import Sorry from "./views/Sorry.vue";
+import Student from "./views/Student.vue";
 import Top from "./views/Top.vue";
-// import UserList from "./views/UserList.vue";
-// import UserCreate from "./views/UserCreate.vue";
-// import UserManager from "./views/UserManager.vue";
-// import InformationManager from "./views/InformationManager.vue";
+import UserList from "./views/UserList.vue";
+import UserCreate from "./views/UserCreate.vue";
+import UserManager from "./views/UserManager.vue";
+import InformationManager from "./views/InformationManager.vue";
 
 Vue.use(Router);
 
