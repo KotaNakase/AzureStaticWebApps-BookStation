@@ -1,62 +1,54 @@
-import * as AjaxUtil from "@/utils/AjaxUtil";
-import UserConst from "./const/UserConst";
-
 /**
- * SessionStorageに保持するサインインユーザー情報 のキー
+ * ユーザーユーティリティ
  */
-const SIGN_IN_KEY = "signInUser";
-
+const USER_INFO_KEY = "userInfo";
 /**
- * サインイン
- *
- * @param {*} userId ユーザーID
- * @param {*} password パスワード
- * @returns
+ * サインイン処理
+ * @param {string} userId ユーザーID
+ * @param {string} password パスワード
  */
-export async function signIn(userId, password) {
-  try {
-    const response = await AjaxUtil.signIn(userId, password);
-
-    // SessionStorageに、サインインユーザー情報を保持する
-    sessionStorage.setItem(SIGN_IN_KEY, JSON.stringify(response.data));
-  } catch (e) {
-    throw e;
+export const signIn = async (userId, password) => {
+  const response = await fetch("/api/signin", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ userId, password }),
+  });
+  if (!response.ok) {
+    const error = new Error("サインインに失敗しました");
+    error.response = { status: response.status };
+    throw error;
   }
-}
-
+  const userInfo = await response.json();
+  sessionStorage.setItem(USER_INFO_KEY, JSON.stringify(userInfo));
+};
 /**
- * サインアウト
+ * サインアウト処理
  */
-export function signOut() {
-  // SessionStorageから、サインインユーザー情報を削除する
-  sessionStorage.removeItem(SIGN_IN_KEY);
-}
-
+export const signOut = async () => {
+  sessionStorage.removeItem(USER_INFO_KEY);
+};
 /**
- * ユーザー情報取得
- *
- * @returns サインインユーザー情報
+ * サインイン状態の確認
+ * @returns {boolean}
  */
-export function currentUserInfo() {
-  // SessionStorageから、サインインユーザー情報を取得する
-  const signInUser = sessionStorage.getItem(SIGN_IN_KEY);
-  return signInUser === null ? null : JSON.parse(signInUser);
-}
-
+export const isSignIn = () => {
+  return sessionStorage.getItem(USER_INFO_KEY) !== null;
+};
 /**
- * サインイン判定
- *
- * @returns サインイン有無
+ * 管理者権限の確認
+ * @returns {boolean}
  */
-export function isSignIn() {
-  return currentUserInfo() !== null;
-}
-
-/**
- * 管理者判定
- * @returns 管理者かどうか (true:管理者 false:一般)
- */
-export function isAdmin() {
+export const isAdmin = () => {
   const userInfo = currentUserInfo();
-  return userInfo !== null && userInfo.auth === UserConst.Auth.admin;
-}
+  if (!userInfo) return false;
+  return userInfo.auth === "admin";
+};
+/**
+ * 現在のユーザー情報を取得
+ * @returns {{ userId: string, userName: string, auth: string } | null}
+ */
+export const currentUserInfo = () => {
+  const stored = sessionStorage.getItem(USER_INFO_KEY);
+  if (!stored) return null;
+  return JSON.parse(stored);
+};

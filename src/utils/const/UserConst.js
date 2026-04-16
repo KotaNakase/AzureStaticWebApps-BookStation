@@ -1,16 +1,21 @@
 /**
- * ユーザー情報 定数
+ * ユーザー定数
  */
-export default {
-  // 性別
-  Gender: {
-    woman: "1",
-    man: "2",
-    unknown: "3",
-  },
-  // 権限
+const UserConst = {
+  /**
+   * 権限
+   */
   Auth: {
-    general: "1",
-    admin: "2",
+    general: "general", // 一般
+    admin: "admin",     // 管理者
+  },
+  /**
+   * 性別
+   */
+  Gender: {
+    man: "man",         // 男性
+    woman: "woman",     // 女性
+    unknown: "unknown", // 不明
   },
 };
+export default UserConst;
