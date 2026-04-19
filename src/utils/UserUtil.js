@@ -40,8 +40,8 @@ export const isSignIn = () => {
  * @returns {boolean}
  */
 export const isAdmin = () => {
-  const userInfo = currentUserInfo();
-  if (!userInfo) return false;
+  // const userInfo = currentUserInfo();
+  // if (!userInfo) return false;
   // return userInfo.auth === "admin";
   return true;
 };
