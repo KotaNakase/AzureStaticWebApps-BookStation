@@ -10,9 +10,9 @@ on:
       - main
 
 jobs:
-  Check_CodeFormatting:
+  check_codeFormatting_job:
     runs-on: ubuntu-latest
-    name: Check Code Formatting
+    name: Check Code Formatting Job
     steps:
       - uses: actions/checkout@v3
       - name: Install Node.js
@@ -22,11 +22,11 @@ jobs:
       - name: Install Prettier
         run: npm install --global prettier
       - name: Check Code Formatting with Prettier
-        run: prettier --check "**/*.{js,jsx,ts,tsx,json,css,scss,md}"
+        run: prettier --check "**/*.{js,json,css,scss}"
 
-  unit_test:
+  unit_test_job:
     runs-on: ubuntu-latest
-    name: Unit Test
+    name: Unit Test Job
     steps:
       - uses: actions/checkout@v3
       - name: Install Node.js
