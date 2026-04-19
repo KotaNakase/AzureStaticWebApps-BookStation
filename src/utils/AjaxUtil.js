@@ -15,7 +15,7 @@ const request = async (method, url, body = null, params = null) => {
   let fullUrl = url;
   if (params) {
     const query = new URLSearchParams(
-      Object.entries(params).filter(([, v]) => v !== undefined && v !== null)
+      Object.entries(params).filter(([, v]) => v !== undefined && v !== null),
     ).toString();
     if (query) fullUrl += `?${query}`;
   }
@@ -67,14 +67,12 @@ export const getUserById = (userId) =>
  * ユーザー登録
  * @param {{ userId: string, userName: string, password: string, gender: string, auth: string, address: string }} model
  */
-export const postUser = (model) =>
-  request("POST", `${BASE_URL}/users`, model);
+export const postUser = (model) => request("POST", `${BASE_URL}/users`, model);
 /**
  * ユーザー更新
  * @param {{ userId: string, userName: string, password: string, gender: string, auth: string, address: string }} model
  */
-export const putUser = (model) =>
-  request("PUT", `${BASE_URL}/users`, model);
+export const putUser = (model) => request("PUT", `${BASE_URL}/users`, model);
 /**
  * ユーザー削除
  * @param {string} userId
@@ -87,8 +85,7 @@ export const deleteUser = (userId) =>
 /**
  * 全書籍取得（マスタ）
  */
-export const getAllSapBooks = () =>
-  request("GET", `${BASE_URL}/books`);
+export const getAllSapBooks = () => request("GET", `${BASE_URL}/books`);
 /**
  * 書籍検索（マスタ）
  * @param {string} searchWord
@@ -105,8 +102,7 @@ export const searchBooks = (searchWord) =>
  * 書籍追加
  * @param {{ isbn: string, title: string, book_id: string, description: string, img_url: string }} model
  */
-export const addBook = (model) =>
-  request("POST", `${BASE_URL}/books`, model);
+export const addBook = (model) => request("POST", `${BASE_URL}/books`, model);
 /**
  * 書籍削除
  * @param {string} title
@@ -146,8 +142,7 @@ export const searchLendingBooks = (userId) =>
 /**
  * お知らせ取得
  */
-export const getInformation = () =>
-  request("GET", `${BASE_URL}/information`);
+export const getInformation = () => request("GET", `${BASE_URL}/information`);
 /**
  * お知らせ登録
  * @param {{ title: string, content: string }} data

@@ -7,14 +7,14 @@ const UserConst = {
    */
   Auth: {
     general: "general", // 一般
-    admin: "admin",     // 管理者
+    admin: "admin", // 管理者
   },
   /**
    * 性別
    */
   Gender: {
-    man: "man",         // 男性
-    woman: "woman",     // 女性
+    man: "man", // 男性
+    woman: "woman", // 女性
     unknown: "unknown", // 不明
   },
 };
