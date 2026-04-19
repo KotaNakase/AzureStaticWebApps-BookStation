@@ -10,6 +10,20 @@ on:
       - main
 
 jobs:
+  Check_CodeFormatting:
+    runs-on: ubuntu-latest
+    name: Check Code Formatting
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install Prettier
+        run: npm install --global prettier
+      - name: Check Code Formatting with Prettier
+        run: prettier --check "**/*.{js,jsx,ts,tsx,json,css,scss,md}"
+
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
